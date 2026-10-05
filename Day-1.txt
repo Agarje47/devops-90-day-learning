@@ -1,0 +1,38 @@
+Day :1 
+Q: What exactly is DevOps?
+-	DevOps is primarily a way of delivering and operating software by bringing development, operations, automation, testing, security and monitoring together.
+
+Q: What is CI?
+-	CI stands for continuous integration 
+-	Suppose file developers are working on an application without CI there will be conflicts, broken build but with CI every change is validated frequently.
+
+Q: What is continuous delivery?
+-	Continuous delivery means the application is kept in a deployable state and can be released through an automated process 
+-	The important point is that production deployment may still require a human approval process.
+
+Q: What is continuous deployment?
+-	Continuous deployment goes one step further with no manual production approval is required when the pipelines’ conditions are satisfied.
+
+Q: What is Build?
+-	Build process can compile code , download dependencies, run checks, package files, generate binaries and create a deployment package.
+
+Q: What is Artifact?
+-	An artifact is essentially a versioned output produced by your build process that can be used leter.
+-	This is important because you generally want to promote the same tested artifact through environments rather than rebuilding different code for each environment.
+
+Q: What is Deployment?
+-	Deployment means taking your application and making it available on the target environment 
+
+Q: what is rollback?
+-	Returning to a previously working version after a failed change.
+-	
+
+Q: what is the difference between CI and CD?
+-	CI/CD : Stands for continuous integrations /continuous integrations.
+-	Develop code in own branch then push it on main branch then build then test 
+    We can do end to end testing only after deploying it on any env like dev or UAT
+-	Post testing on UAT then will deploy it on prod.
+-	Continuous integration  is the process of automatically building and testing code wherever a developer commits or pushes changes to the main branch or repository. The main goal is to identify integration issues and bugs erly.
+-	Continuous delivery/deployment focuses on taking that successfully build and tested code and deploying it to different environments such as dev, UAT and production.
+
+

@@ -1,0 +1,50 @@
+Q: What is IAM?
+- IAM stand for identity and access management.
+- AWS IAM controls who can do what on which AWS resource.
+- like github actions can assume deployment role and that role can access specific AWS resources.
+
+Q: why IAM is important for you?
+- we don't want to provide administrator access to github actions on AWS.
+- instead we will create an IAM role like deployment role with required permissions.
+
+Q: IAM User VS IAM role 
+- an IAM user represents a long term AWS identity like Anant , Developer , automationuser
+- an IAm user can have credentials such as access keys.
+- a IAM role is an identity that can be assumed by another trusted identity.
+- like github actions assume AWS IAM role
+
+Q: simple analogy
+- it think of an IAM role like a temporary security badge.
+
+Q: what is an IAM policy?
+- an IAM policy is jSON document defining permissions 
+- exm:{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::my-bucket"
+    }
+  ]
+}
+- this says allow s3:ListBucket
+
+Q: policy vs trust policy  (IMP)
+- this distinction is extremely important, there are two different question.
+- permission policy -- what can this role do?
+-exm: role -> can read S3 -> can write S3 -> can access cloudwatch
+- trust policy -- who is allowed to assume this role
+- exm: github actions -> allowed to assume -> mydeploymentrole
+- so trust policy --> who can assume role?  permission policy --> what can role do?
+
+Q: what us OIDC?
+- full form is openID connect
+- OIDC is an identity layer build on top of Oauth 2.0
+- for us OIDC ia a way for github to prove its identity to AWS using a signed token.
+
+Q: what is JWT?
+- OIDC uses a token called JWT 
+- JWT stands for JSON web token , conceptually have header playload signature
+- tha playload can contain identity information about the workflow
+- exm: 

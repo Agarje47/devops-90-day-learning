@@ -1,0 +1,42 @@
+Q: what is AWS?
+- AWS stands for amazon Web services is a cloud platform providing infrastructure and managed services on demand.
+- instead of purchasing things physically like servers , storage, network equipment AWS provides these capabilities through cloud services.
+
+Q: AWS Region
+- a region is a geographic AWS location containing AWs infrastructure.
+exm: mumbai -- ap-south-1  , singapore -- ap-southeast-1
+
+Q: availability zone
+- this is one of the most important AWS concepts
+-  an Availability zone (AZ) is an isolated location within an AWS region.
+
+Q: why multiple AZ?
+- because if one AZ has a problem your application can potentially continue running in another AZ
+- this is the foundation of high availability.
+
+Q: region vs availability 
+- region is a geographic AWZ location like mumbai
+- an AWZ region is a geographic area containing multiple isolated availability zone. 
+  availability zones provide infrastructure isolation and allow applications to be designed for higher availability.
+
+Q: what is VPC?
+- VPC stands for virtual private cloud 
+- a VPC is your logically isolated network inside AWS.
+- think of it as own private network inside AWS, where you decide which servers can communicate, which resources can access the internet, and which resources remain private.
+
+Q: what is CIDR/IP range?
+- when creating VPC you give it an IP address range like 10.0.0.0/16
+- resources inside the VPC receive addresses from the range you configure. AWS supports ipv4 and ipv6 addressing for VPC and subnets.
+
+Q: what is Subnets?
+- you divide your VPC into smaller networks called subnets.
+- a subnet belongs to a single AWS availability zone.
+
+Q: public vs private subnet
+- public subnet -- a subnet that has a route allowing internet connectivity through an internet gateway
+- private subnet -- normally does not allow direct inbound internet access
+in our case will put web server in public subnet and app ans sql will be in private subnet.
+
+Q: what is EC2?
+- EC2 stand for elastic compute cloud
+- EC2 provides a virtual servers in AWS means EC2 is a virtual computer / server that you rent from AWS instead of buying and maintaining a physical server yourself
